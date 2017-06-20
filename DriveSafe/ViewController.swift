@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentSpeed: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     
-    let lightGray = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 255/255)
+    let lightGray = UIColor(red: 21/255, green: 99/255, blue: 111/255, alpha: 255/255)
     
     override func viewDidLoad() {
         
