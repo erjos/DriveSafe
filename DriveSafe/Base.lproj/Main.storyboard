@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,25 +22,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvv-E2-FK3" userLabel="CurrentSpeed">
-                                <rect key="frame" x="156.5" y="303" width="61.5" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SIi-1z-opw">
+                                <rect key="frame" x="67" y="213" width="240" height="240"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 mph" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvv-E2-FK3" userLabel="CurrentSpeed">
+                                <rect key="frame" x="117" y="303" width="142" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.15920090752178626" green="0.71622771787782646" blue="0.80724520484615381" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFA-sx-nVK">
-                                <rect key="frame" x="150" y="424" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Update"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Jvv-E2-FK3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0xN-AR-Wyl"/>
+                            <constraint firstItem="SIi-1z-opw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="193" id="IgB-2h-h4I"/>
+                            <constraint firstItem="SIi-1z-opw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="MPV-6W-UP7"/>
+                            <constraint firstItem="SIi-1z-opw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="am5-jF-VAd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SIi-1z-opw" secondAttribute="bottom" constant="214" id="cIN-8o-fwI"/>
                             <constraint firstItem="Jvv-E2-FK3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g28-SC-enw"/>
+                            <constraint firstItem="SIi-1z-opw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rDa-uC-c00"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="SIi-1z-opw" id="NAH-WB-mWz"/>
                         <outlet property="currentSpeed" destination="Jvv-E2-FK3" id="Y2p-Jj-i6c"/>
                     </connections>
                 </viewController>

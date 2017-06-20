@@ -5,14 +5,17 @@ import CoreLocation
 class ViewController: UIViewController {
     
     let locationManager = CLLocationManager()
-
-    var speed = 0
-    
-    let formatter = NumberFormatter()
     
     @IBOutlet weak var currentSpeed: UILabel!
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
+    let lightGray = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 255/255)
     
     override func viewDidLoad() {
+        
+        backgroundImage.image = UIImage.circle(diameter: 100, color: lightGray)
+        self.view.bringSubview(toFront: currentSpeed)
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -28,9 +31,14 @@ class ViewController: UIViewController {
 extension ViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        let speed = manager.location!.speed
+        let speedMPH = manager.location!.speed * 2.23694
         
-        currentSpeed.text = String(round(speed))
+        if (speedMPH > 0) {
+           currentSpeed.text = String(round(speedMPH)) + " mph"
+        } else {
+            currentSpeed.text = "0.0 mph"
+        }
+        
         print(manager.location!.speed)
     }
     
@@ -40,3 +48,19 @@ extension ViewController: CLLocationManagerDelegate{
     }
 }
 
+extension UIImage {
+    class func circle(diameter: CGFloat, color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: diameter, height: diameter), false, 0)
+        let ctx = UIGraphicsGetCurrentContext()!
+        ctx.saveGState()
+        
+        let rect = CGRect(x: 0, y: 0, width: diameter, height: diameter)
+        ctx.setFillColor(color.cgColor)
+        ctx.fillEllipse(in: rect)
+        ctx.restoreGState()
+        let img = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return img
+    }
+}
