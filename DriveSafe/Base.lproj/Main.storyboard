@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="bottom" secondItem="jJc-By-Rw0" secondAttribute="bottom" constant="20" id="GBv-NI-XK4"/>
                                     <constraint firstAttribute="bottom" secondItem="Yc3-qe-kEB" secondAttribute="bottom" constant="29" id="LAk-Dp-87d"/>
                                     <constraint firstItem="jJc-By-Rw0" firstAttribute="top" secondItem="Kva-pR-rKi" secondAttribute="top" constant="20" id="LTN-4W-JlK"/>
-                                    <constraint firstAttribute="height" constant="79" id="j09-gv-j5d"/>
+                                    <constraint firstAttribute="height" constant="79" id="kZd-Da-m0q"/>
                                     <constraint firstAttribute="trailing" secondItem="jJc-By-Rw0" secondAttribute="trailing" constant="18" id="nt8-iI-xYl"/>
                                     <constraint firstItem="Yc3-qe-kEB" firstAttribute="top" secondItem="Kva-pR-rKi" secondAttribute="top" constant="29" id="sCV-V7-hBA"/>
                                 </constraints>
@@ -74,6 +74,7 @@
                     <connections>
                         <outlet property="backgroundImage" destination="SIi-1z-opw" id="NAH-WB-mWz"/>
                         <outlet property="currentSpeed" destination="Jvv-E2-FK3" id="Y2p-Jj-i6c"/>
+                        <outlet property="menu" destination="Kva-pR-rKi" id="mUg-Sp-HHr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -6,6 +6,7 @@ class ViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     
+    @IBOutlet weak var menu: UIView!
     @IBOutlet weak var currentSpeed: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     
@@ -15,12 +16,26 @@ class ViewController: UIViewController {
         
         backgroundImage.image = UIImage.circle(diameter: 100, color: lightGray)
         self.view.bringSubview(toFront: currentSpeed)
+    
+//        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: { 
+//            var frame = self.menu.frame
+//            frame.size.height = 300
+//            self.menu.frame = frame
+//        }, completion: nil)
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1, delay: 1, options: .curveEaseOut, animations: {
+            var frame = self.menu.frame
+            frame.size.height = 500
+            self.menu.frame = frame
+        }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
