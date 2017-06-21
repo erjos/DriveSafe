@@ -74,6 +74,7 @@
                     <connections>
                         <outlet property="backgroundImage" destination="SIi-1z-opw" id="NAH-WB-mWz"/>
                         <outlet property="currentSpeed" destination="Jvv-E2-FK3" id="Y2p-Jj-i6c"/>
+                        <outlet property="height" destination="kZd-Da-m0q" id="YOE-N8-Xto"/>
                         <outlet property="menu" destination="Kva-pR-rKi" id="mUg-Sp-HHr"/>
                     </connections>
                 </viewController>
